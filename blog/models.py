@@ -23,7 +23,8 @@ class Post(models.Model):
         ('nicaragua', 'Nicaragua'),
         ('paraguay', 'Paraguay'),
         ('peru', 'Peru'),
-        ('venezuela', 'Venezuela'),     
+        ('venezuela', 'Venezuela'),   
+        ('united_kingdom', 'United Kingdom'),  
         ('other', 'Other'),   
     ]
 
