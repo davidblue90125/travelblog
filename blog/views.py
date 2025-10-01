@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Post, Comment, Traveller
-from .forms import CommentForm
+from .forms import CommentForm, ProfileForm
 
 # Create your views here.
 
@@ -43,7 +44,7 @@ def post_detail(request, slug):
             messages.add_message(
                 request, messages.SUCCESS,
                 'Comment submitted and awaiting approval'
-    )
+            )
 
     comment_form = CommentForm()
 
@@ -112,36 +113,37 @@ def traveller_profile(request, username):
         },
     )
 
+@login_required
 def edit_traveller_profile(request, username):
     """
     view to edit traveller profile
     """
     user = get_object_or_404(User, username=username)
     traveller, created = Traveller.objects.get_or_create(user=user)
-
+    
+    if request.user != traveller.user:
+        messages.error(
+            request,
+            "You do not have permission to edit this profile"
+        )
+        return redirect("traveller_profile", username=username)
+        
     if request.method == "POST":
-        bio = request.POST.get("bio")
-        fav_country = request.POST.get("fav_country")
-        wishlist_country = request.POST.get("wishlist_country")
-        profile_image = request.FILES.get("profile_image")
-
-        traveller.bio = bio
-        traveller.fav_country = fav_country
-        traveller.wishlist_country = wishlist_country
-
-        if profile_image:
-            traveller.profile_image = profile_image
-
-        traveller.save()
-        messages.add_message(request, messages.SUCCESS, 'Profile updated!')
-
-        return HttpResponseRedirect(reverse('traveller_profile', args=[username]))
-
+        form = ProfileForm(request.POST, request.FILES, instance=traveller)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your profile has been updated successfully")
+            return redirect("traveller_profile", username=username)
+        else:
+            messages.error(request, "Error updating profile")
+    else:
+        form = ProfileForm(instance=traveller)
+        
     return render(
         request,
-        "blog/edit_traveller_profile.html",
+        "blog/profile_form.html",
         {
-            "traveller": traveller,
-            "user": user,
-        },
+            "form": form,
+            "traveller": traveller
+        }
     )

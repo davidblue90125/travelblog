@@ -16,6 +16,7 @@ CATEGORY_COUNTRIES = [
     ('guatemala', 'Guatemala'),
     ('mexico', 'Mexico'),
     ('honduras', 'Honduras'),
+    ('japan', 'Japan'),
     ('nicaragua', 'Nicaragua'),
     ('norway', 'Norway'),
     ('paraguay', 'Paraguay'),

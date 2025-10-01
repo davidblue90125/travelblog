@@ -6,7 +6,15 @@
     <div class="row">
         <div class="col-8">
             <h2>Edit your profile</h2>
-            
+            <p>Feel free to add a profile picture, tell us a bit about yourself and let us know your favourite country and which country is top of your list to visit.</p>            
+            <div class="profile-form mt-4">
+                
+                <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Update Profile">
+                </form>
+                          
+            </div>
         </div>
     </div>
 </div>
