@@ -1,5 +1,5 @@
 body {
-    background-color: #d80525;
+    background-color: white;
 }
 
 .brand {
@@ -48,9 +48,9 @@ body {
 }
 
 .country {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
+    color: rgb(173, 10, 10);
+    margin: 114px;
+    text-transform: lowercase;
 }
 
 .masthead {
