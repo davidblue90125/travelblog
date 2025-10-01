@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from requests import post
-from .models import Post, Comment
+from .models import Post, Comment, Traveller
 from .forms import CommentForm
 
 # Create your views here.
@@ -95,3 +95,53 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+def traveller_profile(request, username):
+    """
+    view to display traveller profile page
+    """
+    user = get_object_or_404(User, username=username)
+    traveller, created = Traveller.objects.get_or_create(user=user)
+    
+    return render(
+        request,
+        "blog/traveller_profile.html",
+        {
+            "traveller": traveller,
+            "user": user,
+        },
+    )
+
+def edit_traveller_profile(request, username):
+    """
+    view to edit traveller profile
+    """
+    user = get_object_or_404(User, username=username)
+    traveller, created = Traveller.objects.get_or_create(user=user)
+
+    if request.method == "POST":
+        bio = request.POST.get("bio")
+        fav_country = request.POST.get("fav_country")
+        wishlist_country = request.POST.get("wishlist_country")
+        profile_image = request.FILES.get("profile_image")
+
+        traveller.bio = bio
+        traveller.fav_country = fav_country
+        traveller.wishlist_country = wishlist_country
+
+        if profile_image:
+            traveller.profile_image = profile_image
+
+        traveller.save()
+        messages.add_message(request, messages.SUCCESS, 'Profile updated!')
+
+        return HttpResponseRedirect(reverse('traveller_profile', args=[username]))
+
+    return render(
+        request,
+        "blog/edit_traveller_profile.html",
+        {
+            "traveller": traveller,
+            "user": user,
+        },
+    )

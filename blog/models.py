@@ -4,30 +4,32 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+CATEGORY_COUNTRIES = [
+    ('argentina', 'Argentina'),
+    ('belize', 'Belize'),
+    ('bolivia', 'Bolivia'),
+    ('brazil', 'Brazil'),
+    ('canada', 'Canada'),
+    ('chile', 'Chile'),
+    ('costa_rica', 'Costa Rica'),
+    ('ecuador', 'Ecuador'),
+    ('guatemala', 'Guatemala'),
+    ('mexico', 'Mexico'),
+    ('honduras', 'Honduras'),
+    ('nicaragua', 'Nicaragua'),
+    ('norway', 'Norway'),
+    ('paraguay', 'Paraguay'),
+    ('peru', 'Peru'),
+    ('venezuela', 'Venezuela'),   
+    ('united_kingdom', 'United Kingdom'),  
+    ('other', 'Other'),   
+]
+
 # Create your models here.
 class Post(models.Model):
     """
     Stores a single blog post entry related to :model:`auth.User`.
     """
-    CATEGORY_COUNTRIES = [
-        ('argentina', 'Argentina'),
-        ('belize', 'Belize'),
-        ('bolivia', 'Bolivia'),
-        ('brazil', 'Brazil'),
-        ('canada', 'Canada'),
-        ('chile', 'Chile'),
-        ('costa_rica', 'Costa Rica'),
-        ('ecuador', 'Ecuador'),
-        ('guatemala', 'Guatemala'),
-        ('mexico', 'Mexico'),
-        ('honduras', 'Honduras'),
-        ('nicaragua', 'Nicaragua'),
-        ('paraguay', 'Paraguay'),
-        ('peru', 'Peru'),
-        ('venezuela', 'Venezuela'),   
-        ('united_kingdom', 'United Kingdom'),  
-        ('other', 'Other'),   
-    ]
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -62,3 +64,17 @@ class Comment(models.Model):
     
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
+    
+class Traveller(models.Model):
+    """
+    Stores additional information about a traveller related to :model:`auth.User`.
+    """
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='traveller')
+    bio = models.TextField(blank=True)
+    profile_image = CloudinaryField('image', default='placeholder')
+    fav_country = models.CharField(max_length=50, choices=CATEGORY_COUNTRIES, blank=False, default='other')
+    wishlist_country = models.CharField(max_length=50, choices=CATEGORY_COUNTRIES, blank=False, default='other')
+        
+    def __str__(self):
+        return f"{self.user.username}'s Profile"
