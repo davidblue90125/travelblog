@@ -93,7 +93,7 @@ body {
 }
 
 .post-title {
-    margin-top: 10%;
+    margin-top: 2%;
     margin-left: 5%;
 }
 
@@ -142,12 +142,6 @@ body {
 .navbar {
     background-color: #5DADE2;    
 }
-
-/*
-.navbar-text{
-    color: white;
-}
-*/
 
 /* Footer styling */
 .footer {

@@ -225,6 +225,9 @@ class Post(models.Model):
     
     def __str__(self):
         return f"{self.title} - {self.country}"
+    
+    def approved_comments_count(self):
+        return self.comments.filter(approved=True).count()
 
 class Comment(models.Model):
     """
