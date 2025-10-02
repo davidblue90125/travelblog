@@ -13,7 +13,7 @@ from .forms import CommentForm, ProfileForm
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
-    paginate_by = 6
+    paginate_by = 8
 
 
 def post_detail(request, slug):

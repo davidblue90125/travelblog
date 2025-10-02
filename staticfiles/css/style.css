@@ -1,5 +1,5 @@
 body {
-    background-color: #d80525;
+    background-color: white;
 }
 
 .brand {
@@ -26,7 +26,7 @@ body {
 }
 
 .card {
-    border: none;
+    border: red 4px solid;
     background-color: transparent;
 }
 
@@ -48,8 +48,8 @@ body {
 }
 
 .country {
-    color: white;
-    margin: 4px;
+    color: rgb(25, 51, 156);
+    margin: 24px;
     text-transform: uppercase;
 }
 
