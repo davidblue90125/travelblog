@@ -16,16 +16,11 @@
             <h3>What's your favourite country that you have visited?</h3>
             <p>{{ traveller.fav_country|title }}</p>
             <h3>Which country is top of your wishlist to visit?</h3>
-            <p>{{ traveller.wishlist_country|title }}</p>
-            
-
-            
-            <!--<p>ADD EDIT PROFILE BUTTON</p>-->
+            <p>{{ traveller.wishlist_country|title }}</p>           
+                      
             {% if request.user == traveller.user %}
-            <a role="button" class="btn btn-primary" href="{% url 'edit_traveller_profile' username=traveller.user.username %}">Edit Profile</a>
-            {% endif %}
-
-            
+            <a role="button" class="btn btn-signup" href="{% url 'edit_traveller_profile' username=traveller.user.username %}">Edit Profile</a>
+            {% endif %}            
         </div>
     </div>
 </div>

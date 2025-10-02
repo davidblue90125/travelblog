@@ -2,28 +2,16 @@ body {
     background-color: #F9FAFC;
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4f4f4a;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
+/*
 .dark-bg {
-    background-color: #445261;
+    background-color: #f56708;
 }
+*/
 
 .main-bg {
     background-color: #D0F0FF;
 }
+
 
 .card {
     border: none;
@@ -101,7 +89,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #188181;
 }
 
 .post-title {
@@ -123,24 +111,18 @@ body {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #2F5D3A;
 }
 
 .link {
-    color: #23BBBB;
+    color: #188181;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #188181;
     text-decoration: underline;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
 }
 
 .btn-delete {
@@ -148,19 +130,12 @@ body {
     background: #E84610;
 }
 
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-
 .faded {
     color: rgb(172, 175, 175);
 }
 
 .approval {
-    color: rgb(222, 146, 168);
+    color: #E84610;
 }
 
 /* Navbar styling */
@@ -168,8 +143,14 @@ body {
     background-color: #5DADE2;    
 }
 
+/*
+.navbar-text{
+    color: white;
+}
+*/
+
 /* Footer styling */
-.footer{
+.footer {
     color: white;
     background-color: #5DADE2;
 }
@@ -180,4 +161,21 @@ body {
 }
 .social_media_links:hover{
     color: #D0F0FF;
+}
+
+/* Custom message styling */
+.alert.success {
+    color: white;
+    background-color: #155724;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-top: 2%;
+}
+
+.alert.info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+    font-weight: 500;
+    border-radius: 8px;
 }
