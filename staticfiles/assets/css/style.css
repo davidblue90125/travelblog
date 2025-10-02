@@ -26,7 +26,7 @@ body {
 }
 
 .card {
-    border: none;
+    border: red solid 3px;
     background-color: transparent;
 }
 
@@ -48,9 +48,9 @@ body {
 }
 
 .country {
-    color: rgb(13, 190, 60);
-    margin: 14px;
-    text-transform: lowercase;
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
 }
 
 .masthead {
