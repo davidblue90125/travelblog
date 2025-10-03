@@ -1,3 +1,18 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+.alumni-sans-pinstripe-regular {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alumni-sans-pinstripe-regular-italic {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
 .main-bg {
     background-color: #ADE8F4;
 }
@@ -78,7 +93,8 @@
 
 .post-link:hover,
 .page-link {
-    color: #188181;
+    background-color: #023E8A;
+    color: #fff;
 }
 
 .post-title {
@@ -103,6 +119,11 @@
     color: #2F5D3A;
 }
 
+.btn-delete {
+    color: #fff;
+    background: #E84610;
+}
+
 .link {
     color: #188181;
     text-decoration: none;
@@ -112,11 +133,6 @@
 .link:active {
     color: #188181;
     text-decoration: underline;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #E84610;
 }
 
 .faded {
