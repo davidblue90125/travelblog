@@ -15,7 +15,7 @@ body {
 }
 
 .main-bg {
-    background-color: var(--primary-color);    
+    background-color: var(--primary-color);   
 }
 
 /* Card Settings */
@@ -27,7 +27,7 @@ body {
 .card-text,
 .card-title,
 .card-body {
-    font-family: var(--primary-font);     
+    font-family: var(--primary-font);  
 }
 
 .image-container {
