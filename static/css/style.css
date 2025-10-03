@@ -1,25 +1,33 @@
-/* Google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-.alumni-sans-pinstripe-regular {
-  font-family: "Alumni Sans Pinstripe", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* CSS Variables */
+:root {   
+    --primary-font: "Quicksand", sans-serif;
+    --primary-color: #ADE8F4; /* non photo blue */
+    --secondary-color: #023E8A; /* marian blue */
+    --tertiary-color: #0077B6; /* honolulu blue */
+    --quaternary-color: #00B4D8; /* pacific cyan */
 }
 
-.alumni-sans-pinstripe-regular-italic {
-  font-family: "Alumni Sans Pinstripe", sans-serif;
-  font-weight: 400;
-  font-style: italic;
+body {
+    font-family: var(--primary-font);     
 }
 
 .main-bg {
-    background-color: #ADE8F4;
+    background-color: var(--primary-color);    
 }
 
+/* Card Settings */
 .card {
     border: none;
     background-color: transparent;
+}
+
+.card-text,
+.card-title,
+.card-body {
+    font-family: var(--primary-font);     
 }
 
 .image-container {
@@ -38,7 +46,7 @@
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #00B4D8;
+    background-color: var(--quaternary-color);
 }
 
 .scale {
@@ -52,51 +60,23 @@
     text-transform: uppercase;
 }
 
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
+/* Link Settings */
 .post-link {
     text-decoration: none;
     color: #445261;
 }
 
-.post-link:hover,
-.page-link {
-    background-color: #023E8A;
-    color: #fff;
+.post-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
 }
 
+.page-link {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Post Settings */
 .post-title {
     margin-top: 2%;
     margin-left: 5%;
@@ -107,9 +87,10 @@
     color: lightgray;
 }
 
+/* Button Settings */
 .btn-signup,
 .btn-edit {
-    background-color: #023E8A;
+    background-color: var(--secondary-color);
     color: #fff;
 }
 
@@ -124,14 +105,15 @@
     background: #E84610;
 }
 
+/* Link Settings */
 .link {
-    color: #188181;
+    color: var(--tertiary-color);
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #188181;
+    color: var(--quaternary-color);
     text-decoration: underline;
 }
 
@@ -145,15 +127,15 @@
 
 /* Navbar styling */
 .navbar {
-    background-color: #0077B6;    
+    background-color: var(--tertiary-color);    
 }
 
-.navbar .nav-link {
+.navbar .nav-link{
     color: white !important;
 }
 
 .navbar .nav-link:hover {
-    color: #D0F0FF !important;
+    color: var(--quaternary-color) !important;
 }
 
 .navbar .navbar-text {
@@ -167,7 +149,7 @@
 /* Footer styling */
 .footer {
     color: white;
-    background-color: #0077B6;
+    background-color: var(--tertiary-color);
 }
 
 .social_media_links{
@@ -175,22 +157,14 @@
     text-decoration: none;
 }
 .social_media_links:hover{
-    color: #D0F0FF;
+    color: var(--quaternary-color);
 }
 
 /* Custom message styling */
 .alert.success {
     color: white;
-    background-color: #155724;
+    background-color: var(--tertiary-color);
     font-weight: 500;
     border-radius: 8px;
     margin-top: 2%;
-}
-
-.alert.info {
-    background-color: #d1ecf1;
-    border-color: #bee5eb;
-    color: #0c5460;
-    font-weight: 500;
-    border-radius: 8px;
 }
