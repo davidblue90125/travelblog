@@ -96,8 +96,8 @@ body {
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #2F5D3A;
+    background-color: #fff !important;
+    color: var(--secondary-color) !important;
 }
 
 .btn-delete {
