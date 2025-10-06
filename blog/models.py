@@ -204,6 +204,8 @@ CATEGORY_COUNTRIES = [
 ]
 
 # Create your models here.
+
+
 class Post(models.Model):
     """
     Stores a single blog post entry related to :model:`auth.User`.
@@ -215,19 +217,20 @@ class Post(models.Model):
     country = models.CharField(max_length=50, choices=CATEGORY_COUNTRIES, blank=False, null=False, default='other')
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
-    created_on= models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-created_on"]
-    
+
     def __str__(self):
         return f"{self.title} - {self.country}"
-    
+
     def approved_comments_count(self):
         return self.comments.filter(approved=True).count()
+
 
 class Comment(models.Model):
     """
@@ -242,10 +245,11 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ["created_on"]
-    
+
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
-    
+
+
 class Traveller(models.Model):
     """
     Stores additional information about a traveller related to :model:`auth.User`.
@@ -256,6 +260,6 @@ class Traveller(models.Model):
     profile_image = CloudinaryField('image', default='placeholder')
     fav_country = models.CharField(max_length=50, choices=CATEGORY_COUNTRIES, blank=False, default='other')
     wishlist_country = models.CharField(max_length=50, choices=CATEGORY_COUNTRIES, blank=False, default='other')
-        
+
     def __str__(self):
         return f"{self.user.username}'s Profile"

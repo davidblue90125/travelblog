@@ -3,15 +3,17 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 from cloudinary.forms import CloudinaryFileField
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
 
+
 class ProfileForm(forms.ModelForm):
     class Meta:
-        model = Traveller   
-        fields = ['bio', 'profile_image', 'fav_country', 'wishlist_country']  
+        model = Traveller
+        fields = ['bio', 'profile_image', 'fav_country', 'wishlist_country']
         widgets = {
             'bio': SummernoteWidget(),
             'profile_image': CloudinaryFileField().widget,

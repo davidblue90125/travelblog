@@ -59,6 +59,7 @@ def post_detail(request, slug):
         },
     )
 
+
 def comment_edit(request, slug, comment_id):
     """
     view to edit comments
@@ -81,6 +82,7 @@ def comment_edit(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 def comment_delete(request, slug, comment_id):
     """
     view to delete comment
@@ -97,13 +99,14 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 def traveller_profile(request, username):
     """
     view to display traveller profile page
     """
     user = get_object_or_404(User, username=username)
     traveller, created = Traveller.objects.get_or_create(user=user)
-    
+
     return render(
         request,
         "blog/traveller_profile.html",
@@ -113,6 +116,7 @@ def traveller_profile(request, username):
         },
     )
 
+
 @login_required
 def edit_traveller_profile(request, username):
     """
@@ -120,14 +124,14 @@ def edit_traveller_profile(request, username):
     """
     user = get_object_or_404(User, username=username)
     traveller, created = Traveller.objects.get_or_create(user=user)
-    
+
     if request.user != traveller.user:
         messages.error(
             request,
             "You do not have permission to edit this profile"
         )
         return redirect("traveller_profile", username=username)
-        
+
     if request.method == "POST":
         form = ProfileForm(request.POST, request.FILES, instance=traveller)
         if form.is_valid():
@@ -138,7 +142,7 @@ def edit_traveller_profile(request, username):
             messages.error(request, "Error updating profile")
     else:
         form = ProfileForm(instance=traveller)
-        
+
     return render(
         request,
         "blog/profile_form.html",
