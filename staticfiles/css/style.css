@@ -3,19 +3,20 @@
 
 /* CSS Variables */
 :root {   
-    --primary-font: "Quicksand", sans-serif;    
-    --primary-color: #ECF7F8; /* azure */
+    --primary-font: "Quicksand", sans-serif;
+    --primary-color: #ADE8F4; /* non photo blue */
     --secondary-color: #023E8A; /* marian blue */
-    --tertiary-color: #0077B6; /* honolulu blue */    
-    --quaternary-color: #008099; /* blue Munsell */
+    --tertiary-color: #0077B6; /* honolulu blue */
+    --quaternary-color: #00B4D8; /* pacific cyan */
 }
 
 body {
     font-family: var(--primary-font);     
+    padding-top: 100px; /* Increased padding to push content below fixed navbar */
 }
 
 .main-bg {
-    background-color: var(--primary-color);   
+    background-color: red;
 }
 
 /* Card Settings */
@@ -27,7 +28,7 @@ body {
 .card-text,
 .card-title,
 .card-body {
-    font-family: var(--primary-font);  
+    font-family: var(--primary-font);     
 }
 
 .image-container {
@@ -96,8 +97,8 @@ body {
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #2F5D3A;
+    background-color: #fff !important;
+    color: var(--secondary-color) !important;
 }
 
 .btn-delete {
@@ -127,7 +128,7 @@ body {
 
 /* Navbar styling */
 .navbar {
-    background-color: var(--tertiary-color);    
+    background-color: var(--tertiary-color);
 }
 
 .navbar .nav-link{
@@ -144,7 +145,6 @@ body {
 
 .navbar .nav-link.active {
     color: black !important;
-    /*text-decoration: underline !important;*/
 }
 
 /* Footer styling */

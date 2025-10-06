@@ -4,18 +4,19 @@
 /* CSS Variables */
 :root {   
     --primary-font: "Quicksand", sans-serif;
-    --primary-color: #ADE8F4; /* non photo blue */
-    --secondary-color: #023E8A; /* marian blue */
+    --primary-color: #ECF7FB; /* non photo blue */
+    --secondary-color: #023E8A; /* persian blue */
     --tertiary-color: #0077B6; /* honolulu blue */
-    --quaternary-color: #00B4D8; /* pacific cyan */
+    --quaternary-color: #008099; /* pacific cyan */
 }
 
 body {
     font-family: var(--primary-font);     
+    padding-top: 100px; /* Increased padding to push content below fixed navbar */
 }
 
 .main-bg {
-    background-color: var(--primary-color);    
+    background-color: var(--primary-color);
 }
 
 /* Card Settings */
@@ -127,7 +128,7 @@ body {
 
 /* Navbar styling */
 .navbar {
-    background-color: var(--tertiary-color);    
+    background-color: var(--tertiary-color);
 }
 
 .navbar .nav-link{
