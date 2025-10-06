@@ -144,8 +144,8 @@ body {
 }
 
 .navbar .nav-link.active {
-    /*color: black !important;*/
-    text-decoration: underline !important;
+    color: black !important;
+    /*text-decoration: underline !important;*/
 }
 
 /* Footer styling */
