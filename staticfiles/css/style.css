@@ -4,11 +4,12 @@
 /* CSS Variables */
 :root {   
     --primary-font: "Quicksand", sans-serif;
-    /*--primary-color: #ADE8F4; /* non photo blue */
+    /*--primary-color: #ADE8F4; non photo blue */
     --primary-color: #ECF7F8; /* azure */
     --secondary-color: #023E8A; /* marian blue */
     --tertiary-color: #0077B6; /* honolulu blue */
-    --quaternary-color: #00B4D8; /* pacific cyan */
+    /*--quaternary-color: #00B4D8; pacific cyan */
+    --quaternary-color: #008099; /* blue Munsell */
 }
 
 body {
