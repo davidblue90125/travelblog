@@ -6,18 +6,22 @@
 
 <div class="container mt-5">
     <h2>{{ user.username|title }}'s Profile</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <img src="{{ traveller.profile_image.url }}" class="img-fluid traveller-pic" alt="{{ traveller.user.username }}">
-        </div>
-        <div class="col-md-8">
+    <div class="row">   
+      {% if "placeholder" in traveller.profile_image.url %}
+      <img src="{% static 'images/placeholder.jpg' %}" style="width: 25%;"
+        alt="placeholder image" >
+      {% else %}
+      <img src="{{ traveller.profile_image.url }}" style="width: 75%;"
+        alt="{{ traveller.user.username }}">
+      {% endif %}
+        <div class="col-md-8 mb-4">
             <h2>About {{ user.username|title }}</h2>
             <div>{{ traveller.bio|safe }}</div>
-            <h3>What's your favourite country that you have visited?</h3>
+            <h4>What's your favourite country that you have visited?</h4>
             <p>{{ traveller.fav_country|title }}</p>
-            <h3>Which country is top of your wishlist to visit?</h3>
+            <h4>Which country is top of your wishlist to visit?</h4>
             <p>{{ traveller.wishlist_country|title }}</p>           
-                      
+                        
             {% if request.user == traveller.user %}
             <a role="button" class="btn btn-signup" href="{% url 'edit_traveller_profile' username=traveller.user.username %}">Edit Profile</a>
             {% endif %}            
