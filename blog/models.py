@@ -203,8 +203,6 @@ CATEGORY_COUNTRIES = [
     ('zimbabwe', 'Zimbabwe')
 ]
 
-# Create your models here.
-
 
 class Post(models.Model):
     """

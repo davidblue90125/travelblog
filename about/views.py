@@ -3,7 +3,7 @@ from django.contrib import messages
 from .models import About
 from .forms import ContactForm
 
-# Create your views here.
+
 def about_me(request):
     """
     Renders the About page
@@ -23,5 +23,5 @@ def about_me(request):
         request,
         "about/about.html",
         {"about": about,
-        "contact_form": contact_form}
+         "contact_form": contact_form}
     )
