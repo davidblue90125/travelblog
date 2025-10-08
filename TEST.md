@@ -5,7 +5,7 @@
 - [Manual Testing](#manual-testing)
 - [Browsers Tested](#browsers-tested)
 - [Devices Tested](#devices-tested)
-- [Bugs/Issues Found](#bugs-issues-found)
+- [Bugs and Issues Found](#bugs-issues-found)
 - [Validators](#validators)
 
 # Manual Testing
@@ -56,7 +56,9 @@ This project has been tested on:
 - iPhone 6
 - iPad Air (4th generation)
 
-# Bugs/Issues found ****************************TO DO
+# Bugs and Issues Found
+
+dd
 
 # Validators
 ## W3C HTML
