@@ -115,7 +115,7 @@ body {
 .link:hover,
 .link:active {
     color: var(--quaternary-color);
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 .faded {
@@ -136,7 +136,8 @@ body {
 }
 
 .navbar .nav-link:hover {
-    color: var(--quaternary-color) !important;
+    color: white !important;
+    text-decoration: underline !important;
 }
 
 .navbar .navbar-text {
