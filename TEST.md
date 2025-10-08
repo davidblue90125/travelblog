@@ -5,7 +5,6 @@
 - [Manual Testing](#manual-testing)
 - [Browsers Tested](#browsers-tested)
 - [Devices Tested](#devices-tested)
-- [Bugs and Issues Found](#bugs-issues-found)
 - [Validators](#validators)
 
 # Manual Testing
@@ -55,11 +54,6 @@ This project has been tested on:
 - Windows 11
 - iPhone 6
 - iPad Air (4th generation)
-
-# Bugs and Issues Found
-
-
-dd
 
 # Validators
 ## W3C HTML
